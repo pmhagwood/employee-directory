@@ -1,18 +1,15 @@
 import React from "react";
 import "./style.css";
 
-function Navbar(props) {
-
+// Using the datalist element we can create autofill suggestions based on the props.breeds array
+function SearchForm(props) {
   return (
-    <>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-
     <form className="search">
       <div className="form-group">
-        <label htmlFor="language">Search Employee:</label>
+        <label htmlFor="language">Search Term:</label>
         <input
-          // value={props.search}
-          // onChange={props.handleInputChange}
+          value={props.search}
+          onChange={props.handleInputChange}
           name="term"
           list="term"
           type="text"
@@ -22,9 +19,7 @@ function Navbar(props) {
         />
       </div>
     </form>
-  </nav>
-</>
   );
 }
 
-export default Navbar;
+export default SearchForm;
