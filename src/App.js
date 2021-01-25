@@ -29,7 +29,7 @@ class App extends Component  {
           </div>
         </div>
         <div>
-          <Navbar employees={this.state.employees}/>
+          <Navbar employees={this.state.search}/>
           <Table employees={this.state.employees}/>
         </div>
       </>
