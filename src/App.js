@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import Navbar from "./components/Navbar";
+import SearchForm from "./components/SearchForm";
 import Table from "./components/Table";
 import Api from "./utilities/Api";
 
 
 class App extends Component  {
   state = {
-    employees: [],
-    search: "",
+    employees: []
+    // search: "",
   }
 
+  // componentDidMount is part of React. It is a lifecycle method/function. 
   componentDidMount(){
     Api.getRandomPeople()
     .then(employees => {
@@ -18,6 +19,12 @@ class App extends Component  {
       })
     });
   }
+
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
+
+
 
   render (){
     return (
@@ -29,7 +36,7 @@ class App extends Component  {
           </div>
         </div>
         <div>
-          <Navbar employees={this.state.search}/>
+          <SearchForm employees={this.state.employees}/>
           <Table employees={this.state.employees}/>
         </div>
       </>

@@ -17,9 +17,9 @@ const Table = (props) => {
                 </thead>
                 <tbody>
                     {console.log("data: ", props.employees)}
-                    {props.employees.length > 0 ? props.employees.map(employee => {
+                    {props.employees.length > 0 ? props.employees.map((employee, i) => {
                         return (
-                            <tr>
+                            <tr key={i}>
                             <th scope="row"><img src={employee.picture.thumbnail} /></th>
                             <td>{employee.name.first + " " + employee.name.last}</td>
                             <td>{employee.phone}</td>
