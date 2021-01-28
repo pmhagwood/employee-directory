@@ -1,34 +1,21 @@
-import React, { Component } from "react";
-import "./style.css";
-
+import React, { Component } from 'react';
+// import "./style.css";
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 // function SearchForm(props) {
 class SearchForm extends Component {
-  constructor(){
+  constructor() {
     super();
-
-    this.state={
-      search:null
+    this.inputRef = React.createRef();
+    this.state = {
+      search: null,
     };
   }
 
-  searchSpace=(event)=>{
-    let keyword = event.target.value;
-    this.setState({search:keyword})
-    console.log("keyword : ", keyword)
-  }
-
-
-
-  // sortEmployees = (event) => {
-  //   console.log("this should sort employees");
-
-  //   console.log("search is ", event.target.value);
-  //   this.setState({
-  //     search: this.state.search + event.target.value
-  //   }, console.log(this.state.search))
-  // }
-
+  // searchSpace = (event) => {
+  //   let keyword = event.target.value;
+  //   this.setState({ search: keyword });
+  //   console.log('keyword : ', keyword);
+  // };
   render() {
     return (
       <>
@@ -43,10 +30,16 @@ class SearchForm extends Component {
                 // name="term"
                 // list="term"
                 type="text"
+                ref={(input) => {
+                  // console.log('input:', input);
+                  input && input.focus();
+                }}
                 // className="form-control"
                 placeholder="Type in a search term to begin"
                 // id="term"
-                onChange={(e)=>this.searchSpace(e)}
+                onChange={(e) => this.props.search(e)}
+                // onChange={(e) => this.searchSpace(e)}
+                // ref={this.inputRef}
               />
             </div>
           </form>
@@ -55,5 +48,4 @@ class SearchForm extends Component {
     );
   }
 }
-
 export default SearchForm;
