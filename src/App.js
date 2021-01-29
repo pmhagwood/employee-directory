@@ -28,10 +28,19 @@ class App extends Component  {
     let keyword = event.target.value;
     this.setState({ search: keyword });
     console.log('keyword : ', keyword);
-    const filteredEmployees = this.state.employees.filter(employee => employee.name.last.includes(keyword));
-    const filteredEmployees2 = this.state.employees.filter(employee => employee.name.first.includes(keyword));
+    const filteredEmployees = this.state.employees.filter(employee => {
+      const query = keyword;
+      console.log('inside keyword: ', keyword)
+
+      return (
+        employee.name.last.includes(query) ||
+        employee.name.first.includes(query)
+      )
+    })
+    // const filteredEmployees = this.state.employees.filter(employee => employee.name.last.includes(keyword));
+    
     this.setState({ employees: filteredEmployees})
-    this.setState({ employees: filteredEmployees2})
+    
   };
 
 
