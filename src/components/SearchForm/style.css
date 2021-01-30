@@ -7,3 +7,18 @@ form.search button[type="submit"] {
   float: right;
   margin-top: 10px;
 }
+
+form.search label {
+  color:cornsilk;
+  margin: 10px 10px 0px 160px;
+}
+
+form.search input {
+  padding: 6px;
+  width: 250px;
+  border: 0;
+}
+
+.navbar {
+  margin-top: -32px;
+}

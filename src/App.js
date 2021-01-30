@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchForm from "./components/SearchForm";
 import Table from "./components/Table";
 import Api from "./utilities/Api";
+import "./styles/style.css"
 
 
 class App extends Component  {
@@ -67,10 +68,10 @@ class App extends Component  {
   render (){
     return (
       <>
-        <div className="jumbotron jumbotron-fluid text-center">
+        <div className="jumbotron jumbotron-fluid ">
           <div className="container">
             <h1 className="display-4">Employee Directory</h1>
-            <p className="lead">Click on carrots to filter by heading or use the search box to narrow your results.</p>
+            <p className="lead">Click on title "name" to sort by name or use the search box to narrow your results.</p>
           </div>
         </div>
         <div>

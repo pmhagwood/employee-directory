@@ -1,5 +1,6 @@
 import React from "react"
 import moment from "moment"
+import "./style.css";
 
 const Table = (props) => {
 
@@ -9,7 +10,7 @@ const Table = (props) => {
                 <thead>
                     <tr>
                         <th scope="col">Image</th>
-                        <th scope="col" onClick={props.toggleSortName}>Name</th>
+                        <th scope="col" onClick={props.toggleSortName} className="name">Name</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
                         <th scope="col">DOB</th>

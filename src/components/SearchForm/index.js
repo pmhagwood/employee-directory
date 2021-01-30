@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./style.css";
 // import "./style.css";
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 // function SearchForm(props) {
@@ -19,7 +20,7 @@ class SearchForm extends Component {
   render() {
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <form className="search">
             <div className="form-group">
               <label htmlFor="language">Search Term:</label>
